@@ -14,21 +14,20 @@ const FlatCard = props => {
    return (
       <Link id="flat-card__link" to={props.slug}>
          <div className="flat-card">
-            <div className="flat-card__img">
-               <Image source={props.source} />
-            </div>
+            {/* <Image source={props.source} /> */}
+
             <div className="flat-card__text-div">
                <h3>{props.title}</h3>
                {summary}
-               <span className="flat-card__meta-span">
-                  <h6 className="flat-card__meta-span--h6">
-                     Created on {createdAt}
-                  </h6>
-                  <h6 className="flat-card__meta-span--h6">
-                     Updated on {updatedAt}
-                  </h6>
-               </span>
             </div>
+            <span className="flat-card__meta-span">
+               <h6 className="flat-card__meta-span--h6">
+                  Created on {createdAt}
+               </h6>
+               <h6 className="flat-card__meta-span--h6">
+                  Updated on {updatedAt}
+               </h6>
+            </span>
          </div>
       </Link>
    );
