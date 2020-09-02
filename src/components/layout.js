@@ -10,7 +10,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import './layout.css';
-import ContactModal from './contact-modal';
+import ContactModal from '../pages/contact-modal';
 import Footer from './footer';
 
 const Layout = ({ props, children }) => {
