@@ -1,42 +1,32 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import './header.css';
+import Image from './image.js';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = ({ siteMenu, toggleModal, source }) => (
+   <header>
+      <div id="logo-div">
+         <Image source={source} />
+      </div>
+      <div id="link-div">
+         {siteMenu.map(menuItem => (
+            <Link className="link" to={menuItem.path} key={menuItem.name}>
+               {menuItem.name}
+            </Link>
+         ))}
+      </div>
+      <button onClick={() => toggleModal(true)}>Contact Me</button>
+   </header>
+);
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+   siteMenu: PropTypes.string,
+   toggleModal: PropTypes.func
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+   siteTitle: ``
+};
 
-export default Header
+export default Header;

@@ -1,0 +1,36 @@
+.card {
+   display: block;
+   background-color: rgba(217, 229, 255, 0.3);
+   border-radius: 3.5%;
+   box-shadow: 0 1px 1px #e6e6e6, 0 2px 4px #e6e6e6;
+   transition: 0.5s all;
+   width: 350px;
+   height: 425px;
+   overflow: hidden;
+   justify-self: center;
+   align-self: center;
+}
+
+.card--h2 {
+   margin: 10px 0 5px 5px;
+}
+
+.card--p {
+   height: 150px;
+   margin: 0px 5px 0 5px;
+}
+
+.card__links {
+   display: flex;
+   position: absolute;
+   margin-left: 5px;
+}
+
+.card__links a {
+   margin-right: 10px;
+}
+
+/* #card-image-div {
+   height: 200px;
+   max-height: 190px;
+} */
