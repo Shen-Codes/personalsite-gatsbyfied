@@ -7,6 +7,7 @@ import Card from '../components/card';
 const Projects = ({ data }) => {
    return (
       <Layout>
+         <SEO title="Shen Codes Projects" />
          <div id="cards-div">
             <div id="div-within">
                {data.allContentfulPersonalSiteProjects.edges.map(node => (

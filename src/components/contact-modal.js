@@ -16,6 +16,7 @@ const ContactModal = ({ toggle }) => {
                data-netlify-honeypot="bot-field"
                className="montform"
                id="reused_form"
+               hidden
             >
                <input type="hidden" name="form-name" value="contact" />
                <p className="name">
