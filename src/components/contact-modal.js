@@ -18,6 +18,7 @@ const ContactModal = ({ toggle }) => {
                id="reused_form"
                hidden
             >
+               <input type="hidden" name="bot-field" />
                <input type="hidden" name="form-name" value="contact" />
                <p className="name">
                   <label>
