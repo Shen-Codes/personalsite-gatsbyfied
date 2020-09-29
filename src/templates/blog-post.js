@@ -9,12 +9,13 @@ import Image from '../components/image';
 
 const BlogPost = ({ data }) => {
   const blogData = data.contentfulPersonalSiteBlog;
+  const assetData = data.allContentfulAsset.edges;
 
   const options = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => {
         if (
-          node.content[0].marks.length === 1 &&
+          node.content[0].marks.length >= 1 &&
           node.content[0].marks[0].type === 'code'
         ) {
           return <pre className="blog-post__preformat">{children}</pre>;
@@ -23,7 +24,7 @@ const BlogPost = ({ data }) => {
         }
       },
       [BLOCKS.HEADING_1]: (node, children) => (
-        <h1 className="blog-post--h1">{children}</h1>
+        <h1 className="blog-post--h1"></h1>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
         <h2 className="blog-post--h2">{children}</h2>
@@ -36,7 +37,11 @@ const BlogPost = ({ data }) => {
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
         <div className="blog-post--embedAsset">
-          <Image source={children} />
+          <img
+            src={`https://${node.data.target.fields.file['en-US'].url}`}
+            alt="gif"
+          />
+          )
         </div>
       )
     }
@@ -57,7 +62,6 @@ const BlogPost = ({ data }) => {
         </span>
         <div id="blog-content-wrapper">
           <h1>{blogData.title}</h1>
-          {blogData.body.json.content.map(node => console.table(node.content))}
           <div className="blog-post__main">{doc}</div>
         </div>
       </div>
@@ -78,6 +82,17 @@ export const pageQuery = graphql`
       updatedAt
       summary {
         json
+      }
+    }
+    allContentfulAsset {
+      edges {
+        node {
+          id
+          contentful_id
+          file {
+            url
+          }
+        }
       }
     }
   }

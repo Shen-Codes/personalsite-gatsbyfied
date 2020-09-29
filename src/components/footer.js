@@ -39,7 +39,6 @@ const Footer = ({ source }) => {
         <ul className="social-links">
           {Object.keys(data.site.siteMetadata.social).map((s, i) => (
             <li className="social-links__li" key={i + s}>
-              {console.log(data.site.siteMetadata.social[s])}
               <a href={data.site.siteMetadata.social[s]}>{socialIcons(s)}</a>
             </li>
           ))}
