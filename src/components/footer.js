@@ -3,17 +3,16 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
 import './footer.css';
 
-var width = window.matchMedia('(max-width: 450px)');
 const socialIcons = social => {
   switch (social) {
     case 'twitter':
-      return <FaTwitter color="black" size={width.matches ? 25 : 30} />;
+      return <FaTwitter color="black" size={28} />;
     case 'github':
-      return <FaGithub color="black" size={width.matches ? 25 : 30} />;
+      return <FaGithub color="black" size={28} />;
     case 'linkedin':
-      return <FaLinkedin color="black" size={width.matches ? 25 : 30} />;
+      return <FaLinkedin color="black" size={28} />;
     case 'youtube':
-      return <FaYoutube color="black" size={width.matches ? 25 : 30} />;
+      return <FaYoutube color="black" size={28} />;
     default:
       return;
   }

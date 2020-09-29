@@ -1,19 +1,19 @@
 #footer-container {
-   display: flex;
-   position: relative;
-   bottom: 0px;
-   justify-content: center;
-   align-items: center;
-   height: 4.5vh;
-   width: 100%;
-   border-top: 1px double rgba(116, 116, 116, 0.6);
+  display: flex;
+  position: relative;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  height: 4.5vh;
+  width: 100%;
+  border-top: 1px double rgba(116, 116, 116, 0.6);
 }
 
 .social-links {
-   display: flex;
-   list-style-type: none;
+  display: flex;
+  list-style-type: none;
 }
 
 .social-links__li {
-   margin-right: 20px;
+  margin-right: 20px;
 }
