@@ -47,22 +47,33 @@
 
 @media (max-width: 450px) {
   .flat-card {
-    width: 90vw;
-
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0 2px 2px #e6e6e6, 0 2px 4px #e6e6e6;
   }
 
   .flat-card__text-div {
     text-decoration: none;
     font-size: 0.9rem;
-    margin-left: 3px;
-    margin-bottom: 10px;
+    z-index: 1;
   }
 
   .flat-card__meta-span {
-    display: flex;
-    bottom: 0;
-    margin-left: 3px;
-    font-size: 0.9rem;
+    visibility: hidden;
+  }
+  #flat-card__image {
+    max-height: 15vh;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+  }
+
+  img {
+    max-height: 15vh;
+    object-fit: contain;
   }
 }
