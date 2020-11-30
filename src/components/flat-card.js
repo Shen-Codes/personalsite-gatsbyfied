@@ -12,22 +12,25 @@ const FlatCard = props => {
    const updatedAt = datePretty(new Date(props.updatedAt));
 
    return (
-      <Link id="flat-card__link" to={props.slug}>
+		<Link id="flat-card__link" to={props.slug}>
          <div className="flat-card">
-            {/* <Image source={props.source} /> */}
-
-            <div className="flat-card__text-div">
-               <h3>{props.title}</h3>
-               {summary}
-            </div>
-            <span className="flat-card__meta-span">
-               <h6 className="flat-card__meta-span--h6">
-                  Created on {createdAt}
-               </h6>
-               <h6 className="flat-card__meta-span--h6">
-                  Updated on {updatedAt}
-               </h6>
-            </span>
+				<div id="flat-card__image">
+					<Image  source={props.source} />
+				</div>
+				<div className="flat-card__text-div">     
+					<div >
+						<h3>{props.title}</h3>
+						{summary}
+					</div>
+					<span className="flat-card__meta-span">
+						<p className="flat-card__meta-span--p">
+							Created on {createdAt}
+						</p>
+						<p className="flat-card__meta-span--p">
+							Updated on {updatedAt}
+						</p>
+					</span>
+				</div>
          </div>
       </Link>
    );

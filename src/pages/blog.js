@@ -8,8 +8,9 @@ import FlatCard from '../components/flat-card';
 
 const Blog = ({ data }) => {
    const blogData = data.allContentfulPersonalSiteBlog.edges;
-
+	console.log(blogData)
    return (
+		
       <Layout>
          <SEO title="Shen Codes Blog" />
          <div className="blog-list">
@@ -33,11 +34,11 @@ const Blog = ({ data }) => {
 
 export const BlogQuery = graphql`
    query BlogQuery {
-      allContentfulPersonalSiteBlog {
+      allContentfulPersonalSiteBlog(sort: {order: DESC, fields: createdAt}) {
          edges {
             node {
                featuredImage {
-                  fluid(maxHeight: 180, maxWidth: 200) {
+                  fluid(maxWidth: 200, maxHeight: 180) {
                      ...GatsbyContentfulFluid
                   }
                }
