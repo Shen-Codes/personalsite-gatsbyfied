@@ -46,11 +46,11 @@ export const projectsQuery = graphql`
                   json
                }
                github
-               linkToSite
             }
          }
       }
    }
-`;
-
-export default Projects;
+	`;
+	
+	export default Projects;
+	// linkToSite @include(if: linkToSite != null)
